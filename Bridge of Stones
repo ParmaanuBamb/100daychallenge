@@ -1,0 +1,32 @@
+class GfGFunction{
+    
+    // Function to find number of jumps
+    // N : number inscribed on the last stone.
+    // X : number on which we have to reach
+    static void findJumps(long N, long X){
+        
+        // Your code goes here
+        long i=0,c=0,s1=0,s2=0,v=23;
+        if(X==1)
+        {
+            System.out.println("0");
+        }
+        else
+        {
+           
+            //for(i=2;i<N;i++)
+           // {
+                if(X%2==0)            
+                    System.out.println(Math.min((X-1)/2+1,(N-X)/2));
+               else
+               {
+               if(N%2==0)    
+               System.out.println(Math.min((X-1)/2,(N-X)/2+1));
+               else
+               System.out.println(Math.min((X-1)/2,(N-X)/2));
+           
+               }
+           // }
+      }
+    }
+}
