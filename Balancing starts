@@ -1,0 +1,80 @@
+//This is The Coding Area
+//This is The Coding Area
+import java.util.*;
+
+class GFG 
+{
+   public static void main(String args[])
+   {
+        Scanner sc=new Scanner(System.in);
+        int n1=sc.nextInt();
+        int n2=sc.nextInt();
+        int i,j,c;
+        ArrayList<String> a1=new ArrayList<String>();
+        ArrayList<String> a2=new ArrayList<String>();
+        ArrayList<Integer> a3=new ArrayList<Integer>();
+        for(i=n1;i<=n2;i++)
+        {
+            c=0;
+            for(j=2;j<i;j++)
+            {
+                    if(i%j==0)
+                        c++;    
+            }
+            if(c==0)
+                a1.add(String.valueOf(i));
+        }
+         int sa=a1.size();
+       //printing 1st prime list
+       // for(i=0;i<sa;i++)
+        //System.out.print(a1.get(i)+" ");
+        //System.out.println(" ");//
+        for(i=0;i<sa;i++)
+        {
+            for(j=0;j<sa;j++)
+            {
+                if(a1.get(i)!=a1.get(j))
+                a2.add(a1.get(i)+a1.get(j));    
+            }
+        }
+        int sa2=a2.size();
+         //printing combination list
+  //       for(i=0;i<sa2;i++)
+    //    System.out.print(a2.get(i)+" ");
+      //  System.out.println(" ");//
+        for(i=0;i<sa2;i++)
+        {
+            int v=Integer.valueOf(a2.get(i));
+            c=0;
+            for(j=2;j<v;j++)
+            {
+                    if(v%j==0)
+                        c++;    
+            }
+            if(c==0)
+                a3.add(v);
+        }
+        int sa3=a3.size();
+        //printing 2nd primelist
+        //for(i=0;i<sa3;i++)
+        //System.out.print(a3.get(i)+" ");
+        //System.out.println(" ");//
+        long a=a3.get(0);
+        long b=a3.get(sa3-1);
+        long num=0;
+        if(a==23)
+        num=sa3-4;
+        else
+        num=sa3-2;
+        long cn=0;
+        while(num!=0)
+        {
+            cn=a+b;
+            a=b;
+            b=cn;
+           //System.out.print(cn+" ");
+            num--;
+        }
+        System.out.print(cn);
+    }
+}
